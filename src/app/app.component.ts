@@ -33,4 +33,10 @@ export class AppComponent implements OnInit{
     this.store.dispatch(new ForumActions.AddPost(post))
     this.frmPost.reset({title: "", link: ""});
   }
+  upvotePost(i:number){
+    this.store.dispatch(new ForumActions.UpvotePost(i))
+  }
+  downvotePost(i:number){
+    this.store.dispatch(new ForumActions.DownvotePost(i))
+  }
 }

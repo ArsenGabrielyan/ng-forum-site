@@ -16,4 +16,16 @@ export class ForumState{
           state.push(item.post);
           ctx.setState([...state]);
      }
+     @Action(ForumActions.UpvotePost)
+     upvotePost(ctx: StateContext<IPost[]>,item: ForumActions.UpvotePost){
+          const state = ctx.getState();
+          state[item.i].points = state[item.i].points+1;
+          ctx.setState([...state]);
+     }
+     @Action(ForumActions.DownvotePost)
+     downvotePost(ctx: StateContext<IPost[]>,item: ForumActions.DownvotePost){
+          const state = ctx.getState();
+          state[item.i].points = state[item.i].points-1;
+          ctx.setState([...state]);
+     }
 }

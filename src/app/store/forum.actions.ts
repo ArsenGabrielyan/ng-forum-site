@@ -7,10 +7,10 @@ export namespace ForumActions{
      }
      export class UpvotePost{
           static readonly type = '[FORUM] Upvote Post';
-          constructor(public post: IPost, public count: number){}
+          constructor(public i:number){}
      }
      export class DownvotePost{
           static readonly type = '[FORUM] Downvote Post';
-          constructor(public post: IPost, public count: number){}
+          constructor(public i:number){}
      }
 }
