@@ -1,0 +1,70 @@
+@import "./scss/mixins.scss";
+.container{
+     min-height: 100vh;
+     display: flex;
+     @include flex-align(space-between,flex-start);
+     padding: 12px 24px;
+     background: #fafafa;
+     .creation{
+          width: 50%;
+          display: flex;
+          @include flex-align(center,center);
+          flex-direction: column;
+          h2{
+               font-size: 36px;
+               font-weight: 400;
+          }
+          .frmGroup{
+               width: 25%;
+               display: flex;
+               flex-direction: column;
+               margin: 10px 0;
+               label{margin: 5px 0;}
+               input{
+                    width: 100%;
+                    padding: 5px;
+                    border: 2px solid #0092ff;
+                    border-radius: 5px;
+                    outline: none;
+                    transition: .3s ease;
+                    &:focus{
+                         border-color: #22b455;
+                    }
+               }
+          }
+          button{
+               padding: 0.5em 1em;
+               border: none;
+               outline: none;
+               background: linear-gradient(#22222233, #22222233), linear-gradient(to right, #00c9ff, #92fe9d, #00c9ff);
+               background-size: 200%;
+               color: white;
+               font-weight: 500;
+               letter-spacing: .5px;
+               border-radius: 5px;
+               cursor: pointer;
+               transition: .3s linear;
+               font-size: 17px;
+               margin: 5px 0;
+               &:hover{
+                    background-position: right;
+               }
+          }
+     }
+     .posts{
+          width: 50%;
+     }
+}
+@media screen and (max-width: 800px){
+     .container{
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          width: 100%;
+          .creation{width: 100%;.frmGroup, button{width: 100%;}}
+     }
+     .posts{
+          margin: 10px 0;
+     }
+}
+@media screen and (max-width: 500px) {.container .creation h2{font-size: 24px;}}

@@ -1,0 +1,30 @@
+@import "./mixins.scss";
+.hero{
+     min-height: 25vh;
+     display: flex;
+     @include flex-align(center,center);
+     background: linear-gradient(45deg, #00c9ff, #92fe9d, #00c9ff);
+     background-size: 600% 600%;
+     -webkit-animation: bg 9s ease infinite;
+     -moz-animation: bg 9s ease infinite;
+     animation: bg 9s ease infinite;
+     h1{
+          font-size: 4.5em;
+          color: white;
+          filter: drop-shadow(5px 5px 5px #005596);
+     }
+}
+@-webkit-keyframes bg {
+     0%, 100%{background-position:90% 0%}
+     50%{background-position:11% 100%}
+}
+ @-moz-keyframes bg {
+     0%, 100%{background-position:90% 0%}
+     50%{background-position:11% 100%}
+}
+@keyframes bg {
+     0%, 100%{background-position:90% 0%}
+     50%{background-position:11% 100%}
+}
+@media screen and (max-width: 800px) {.hero h1{font-size: 3em; text-align: center;}}
+@media screen and (max-width: 800px) {.hero h1{font-size: 2em;}}
