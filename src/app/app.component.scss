@@ -53,6 +53,44 @@
      }
      .posts{
           width: 50%;
+          h2{
+               font-size: 36px;
+               font-weight: 400;
+          }
+          .post{
+               width: 400px;
+               display: flex;
+               @include flex-align(space-between, center);
+               padding: 20px;
+               border: 2px solid #222;
+               border-radius: 5px;
+               margin: 10px 0;
+               .counter{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    .upvote, .downvote{
+                         border: none;
+                         outline: none;
+                         background: none;
+                         filter: invert(.2);
+                         img{width: 24px;height: 24px;}
+                         cursor: pointer;
+                         transition: .3s ease;
+                         &:hover{opacity: .5;}
+                    }
+                    span{font-size: 24px;text-align: center;}
+               }
+               .content{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    h2,p{text-align: center;}
+                    p{color: #777; font-style: italic;}
+               }
+          }
      }
 }
 @media screen and (max-width: 800px){
@@ -64,7 +102,12 @@
           .creation{width: 100%;.frmGroup, button{width: 100%;}}
      }
      .posts{
+          width: 100% !important;
           margin: 10px 0;
+          h2{text-align: center;}
+          .post{
+               width: 100% !important;
+          }
      }
 }
-@media screen and (max-width: 500px) {.container .creation h2{font-size: 24px;}}
+@media screen and (max-width: 500px) {.container{ .creation h2, .posts h2{font-size: 24px;}}}
