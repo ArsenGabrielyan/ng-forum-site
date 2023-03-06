@@ -10,10 +10,7 @@
           display: flex;
           @include flex-align(center,center);
           flex-direction: column;
-          h2{
-               font-size: 36px;
-               font-weight: 400;
-          }
+          h2{font-size: 36px;font-weight: 400;}
           .frmGroup{
                width: 25%;
                display: flex;
@@ -27,10 +24,10 @@
                     border-radius: 5px;
                     outline: none;
                     transition: .3s ease;
-                    &:focus{
-                         border-color: #22b455;
-                    }
+                    &:focus{border-color: #22b455;}
+                    &.err{color: #dc3545;border-color: #dc3545;}
                }
+               .error{color: #dc3545;}
           }
           button{
                padding: 0.5em 1em;
@@ -46,17 +43,18 @@
                transition: .3s linear;
                font-size: 17px;
                margin: 5px 0;
-               &:hover{
-                    background-position: right;
+               &:hover:not(:disabled){background-position: right;}
+               &:disabled{
+                    cursor: auto;
+                    user-select: none;
+                    pointer-events: none;
+                    background: #777;
                }
           }
      }
      .posts{
           width: 50%;
-          h2{
-               font-size: 36px;
-               font-weight: 400;
-          }
+          h2{font-size: 36px;font-weight: 400;}
           .post{
                width: 400px;
                display: flex;
@@ -68,8 +66,8 @@
                .counter{
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
+                    @include flex-align(space-between, center);
+                    margin-right: 10px;
                     .upvote, .downvote{
                          border: none;
                          outline: none;
@@ -87,8 +85,8 @@
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                    h2,p{text-align: center;}
-                    p{color: #777; font-style: italic;}
+                    h2,p{text-align: center;word-break: break-all;}
+                    p{color: #777; font-style: italic; }
                }
           }
      }
@@ -96,8 +94,7 @@
 @media screen and (max-width: 800px){
      .container{
           flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
+          @include flex-align(flex-start,center);
           width: 100%;
           .creation{width: 100%;.frmGroup, button{width: 100%;}}
      }
@@ -105,9 +102,7 @@
           width: 100% !important;
           margin: 10px 0;
           h2{text-align: center;}
-          .post{
-               width: 100% !important;
-          }
+          .post{width: 100% !important;}
      }
 }
 @media screen and (max-width: 500px) {.container{ .creation h2, .posts h2{font-size: 24px;}}}
