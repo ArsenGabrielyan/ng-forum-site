@@ -18,7 +18,7 @@
   </form>
   <div class="posts">
     <h2>Recent Posts</h2>
-    <div class="post" *ngFor="let post of posts; let i = index" [id]="i">
+    <div class="post" *ngFor="let post of posts | sorted; let i = index" [id]="i">
       <div class="counter">
         <button class="upvote" (click)="upvotePost(i)"><img src="../assets/svg/upvote.svg" alt="upvote"></button>
         <span>{{post.points}}</span>

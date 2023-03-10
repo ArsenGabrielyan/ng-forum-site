@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { ForumState } from './store/forum.state';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidationMessagePipe } from './pipes/validation-message.pipe';
+import { SortedPipe } from './pipes/sorted.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValidationMessagePipe
+    ValidationMessagePipe,
+    SortedPipe
   ],
   imports: [
     BrowserModule,
